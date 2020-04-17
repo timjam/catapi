@@ -11,6 +11,7 @@
     "coverage": "jest --coverage",
     "dev": "set NODE_ENV=development & npm-run-all server:dev",
     "lint": "npx tslint -p .\\tsconfig.json",
+    "migrate:make": "npx knex --knexfile .\\src\\knex\\knexfile.ts migrate:make -x ts",
     "prod": "set NODE_ENV=production & npm-run-all clean build server:prod",
     "server:dev": "ts-node --require dotenv/config ./src/app.ts",
     "server:prod": "node ./dist/app.js",
