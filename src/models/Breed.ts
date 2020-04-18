@@ -2,7 +2,10 @@ import { Model } from 'objection';
 import tables from '../knex/constants';
 
 class Breed extends Model {
-  readonly id!: string;
+
+  static tableName = tables.BREED_TABLE;
+
+  readonly id!: number;
   name!: string;
   description?: string;
   temperament!: string;
@@ -13,7 +16,7 @@ class Breed extends Model {
       type: 'object',
       required: ['name', 'temperament', 'origin'],
       properties: {
-        id: { type: 'string' },
+        id: { type: 'integer' },
         name: { type: 'string', minLength: 1, maxLength: 50 },
         description: { type: 'string', maxLength: 500 },
         temperament: { type: 'string', minLength: 1, maxLength: 50 },
