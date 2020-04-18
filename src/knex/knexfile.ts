@@ -9,7 +9,7 @@ export = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3.db',
+      filename: __dirname + '/dev.sqlite3.db',
     },
     useNullAsDefault: true,
     migrations: {
