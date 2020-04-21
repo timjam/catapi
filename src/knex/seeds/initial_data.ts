@@ -15,7 +15,7 @@ const BREED_LIST = [
     origin: 'Bengal jungle'
   },
   {
-    name: 'British short hair',
+    name: 'British shorthair',
     description: 'Looks like a normal cat. Likes monocles and tea',
     temperament: 'Aristocratic',
     origin: 'Windsor castle'
@@ -25,6 +25,24 @@ const BREED_LIST = [
     description: 'Bright eyed night owl. Always bundled with another unit',
     temperament: 'Sneaky',
     origin: 'Somewhere Far-East'
+  },
+  {
+    name: 'Russian Blue',
+    description: 'Great cousin for the Prussian Blue',
+    temperament: 'Aggressive',
+    origin: 'Russia'
+  },
+  {
+    name: 'Himalayan',
+    description: 'Thought to be a yeti, but is actually much more',
+    temperament: 'Ice cold',
+    origin: 'US & UK'
+  },
+  {
+    name: 'European shorthair',
+    description: 'Was kicked out of the Beatles, because of that short hair',
+    temperament: 'Aristocratic',
+    origin: 'Sweden'
   }
 ];
 
