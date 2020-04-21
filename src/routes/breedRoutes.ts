@@ -6,9 +6,9 @@ const registerApi = (breedRouter: express.Router) => {
     const { name } = req.query;
     let breeds;
     if (!name) {
-      breeds = await Breed.query();
+      breeds = await Breed.query().orderBy('name');
     } else {
-      breeds = await Breed.query().where('name', name as string);
+      breeds = await Breed.query().where('name', 'like', `%${name}%`).orderBy('name');
     }
     res.send(breeds);
   });
