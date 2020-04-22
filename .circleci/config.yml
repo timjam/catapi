@@ -17,7 +17,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
   
-  deploy_to_staging:
+  deploy_to_production:
     docker:
       - image: google/cloud-sdk
     environment:
@@ -62,17 +62,9 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy_to_staging:
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
       - deploy_to_production:
           requires:
             - test
-            - deploy_to_staging
           filters:
             branches:
               only:

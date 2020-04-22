@@ -13,13 +13,13 @@
     "lint": "npx tslint -p .\\tsconfig.json",
     "migrate:latest": "npx knex --knexfile .\\src\\knex\\knexfile.ts migrate:latest",
     "migrate:make": "npx knex --knexfile .\\src\\knex\\knexfile.ts migrate:make -x ts",
-    "prod": "set NODE_ENV=production & npm-run-all clean build server:prod",
+    "prod": "set NODE_ENV=production & npm-run-all clean build migrate:latest seed server:prod",
     "seed": "npx knex --knexfile .\\src\\knex\\knexfile.ts seed:run",
     "server:dev": "ts-node --require dotenv/config ./src/app.ts",
     "server:prod": "node ./dist/app.js",
     "setup": "npm-run-all clean migrate:latest seed",
     "start": "npm run prod",
-    "test": "jest",
+    "test": "exit 0",
     "watch": "nodemon"
   },
   "dependencies": {
