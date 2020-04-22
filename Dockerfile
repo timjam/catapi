@@ -7,8 +7,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install -g yarn
-RUN yarn install
+RUN npm install
 
 COPY . .
 
@@ -17,4 +16,4 @@ ENV APP_COMMIT_REF=${COMMIT_REF} \
 
 EXPOSE 3456
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
