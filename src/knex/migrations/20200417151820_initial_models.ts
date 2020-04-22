@@ -11,6 +11,7 @@ export async function up(knex: Knex): Promise<any> {
       table.string('description');
       table.string('temperament');
       table.string('origin');
+      table.string('imgUrl');
       table.bigInteger('created_date').notNullable().defaultTo(knex.fn.now());
       table.bigInteger('modified_date').notNullable().defaultTo(knex.fn.now());
     });

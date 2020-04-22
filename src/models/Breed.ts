@@ -21,6 +21,7 @@ class Breed extends Model {
         description: { type: 'string', maxLength: 500 },
         temperament: { type: 'string', minLength: 1, maxLength: 50 },
         origin: { type: 'string', minLength: 1, maxLength: 50 },
+        imgUrl: { type: 'string', minLength: 1, maxLength: 255 },
         created_date: { type: 'number' },
         modified_date: { type: 'number' }
       }
