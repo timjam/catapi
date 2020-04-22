@@ -24,7 +24,7 @@ jobs:
       - PROJECT_NAME: "catapi"
       - GOOGLE_PROJECT_ID: "cat-api-49049"
       - GOOGLE_COMPUTE_ZONE: "europe-north1-a"
-      - GOOGLE_CLUSTER_NAME: "standard-cluster-1"
+      - GOOGLE_CLUSTER_NAME: "catapi-cluster-1"
     steps:
       - checkout
       - run:
