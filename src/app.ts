@@ -1,6 +1,9 @@
 import express from 'express';
 import promiseRouter from 'express-promise-router';
 import Knex from 'knex';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 import { Model } from 'objection';
 
@@ -9,7 +12,11 @@ import knexfile from './knex/knexfile';
 
 // Init Knex
 const knex = Knex(knexfile.development);
-knex.migrate.latest();
+// Migrate and seed
+(async () => {
+  await knex.migrate.latest();
+  await knex.seed.run();
+})();
 
 // Bind the Knex instance to Objection Model base class
 Model.knex(knex);
