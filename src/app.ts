@@ -21,7 +21,7 @@ const knex = Knex(knexfile.development);
 // Bind the Knex instance to Objection Model base class
 Model.knex(knex);
 
-const { SERVER_PORT } = process.env;
+const SERVER_PORT = process.env.SERVER_PORT || 3456;
 
 const router = promiseRouter();
 const server = express()
