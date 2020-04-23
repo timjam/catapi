@@ -38,32 +38,18 @@ export = {
     },
   },
 
-  // production: {
-  //   client: 'pg',
-  //   connection: process.env.DATABASE_URL,
-
-  //   pool: {
-  //     min: 2,
-  //     max: 10,
-  //   },
-
-  //   migrations: {
-  //     directory: __dirname + '/migrations',
-  //   },
-
-  // },
-
   production: {
-    client: 'sqlite3',
-    connection: {
-      filename: __dirname + '/dev.sqlite3.db',
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
+
+    pool: {
+      min: 2,
+      max: 10,
     },
-    useNullAsDefault: true,
+
     migrations: {
       directory: __dirname + '/migrations',
     },
-    seeds: {
-      directory: __dirname + '/seeds',
-    },
+
   },
 };
